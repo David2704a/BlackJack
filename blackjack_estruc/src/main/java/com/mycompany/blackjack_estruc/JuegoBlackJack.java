@@ -1,16 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.blackjack_estruc;
 
 import java.util.HashMap;
 import java.util.Scanner;
 
-/**
- *
- * @author AGSalud
- */
 public class JuegoBlackJack {
 
     private Scanner scanner = new Scanner(System.in);
@@ -29,7 +21,6 @@ public class JuegoBlackJack {
         jugadores.put(nombre, jugador);
         jugadores.put("Dealer", dealer);
         cola.agregarTurno(nombre);
-        cola.agregarTurno("Dealer");
 
         // Repartir cartas iniciales
         for (int i = 0; i < 2; i++) {
@@ -37,10 +28,13 @@ public class JuegoBlackJack {
             dealer.recibirCarta(baraja.robarCarta());
         }
 
+        boolean jugadorSePaso = false;
+
         while (cola.hayTurnos()) {
             String turno = cola.siguienteTurno();
             Jugador actual = jugadores.get(turno);
             System.out.println("\nTurno de: " + turno);
+            System.out.println(turno + " tiene: ");
             actual.mostrarMano();
 
             if (!turno.equals("Dealer")) {
@@ -53,12 +47,19 @@ public class JuegoBlackJack {
                         historial.agregar(nueva);
                         actual.mostrarMano();
                         if (actual.calcularPuntaje() > 21) {
+                            jugadorSePaso = true;
                             break;
                         }
                     } else {
                         break;
                     }
                 }
+
+                // Solo agregamos turno del dealer si el jugador no se pasó
+                if (!jugadorSePaso) {
+                    cola.agregarTurno("Dealer");
+                }
+
             } else {
                 while (arbol.decidir(actual.calcularPuntaje()).equals("pedir")) {
                     System.out.println("El dealer toma una carta...");
