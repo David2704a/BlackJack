@@ -6,16 +6,17 @@ package com.mycompany.blackjack_estruc;
 
 /**
  *
- * @author AGSalud
+ * @author Johan
  */
 public class NodoDecision {
 
     int valor;
-    String accion;
-    NodoDecision izquierda, derecha;
+    String decision;
+    NodoDecision izquierda;
+    NodoDecision derecha;
 
-    public NodoDecision(int valor, String accion) {
+    NodoDecision(int valor, String decision) {
         this.valor = valor;
-        this.accion = accion;
+        this.decision = decision;
     }
 }

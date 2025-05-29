@@ -6,13 +6,13 @@ package com.mycompany.blackjack_estruc;
 
 /**
  *
- * @author AGSalud
+ * @author Johan
  */
-public class ArbolDecisionDealer {
+public class ArbolDecision {
 
     NodoDecision raiz;
 
-    public ArbolDecisionDealer() {
+    public ArbolDecision() {
         raiz = new NodoDecision(17, "plantarse");
         raiz.izquierda = new NodoDecision(0, "pedir");
         raiz.derecha = new NodoDecision(21, "plantarse");
@@ -20,8 +20,8 @@ public class ArbolDecisionDealer {
 
     public String decidir(int puntaje) {
         if (puntaje < 17) {
-            return raiz.izquierda.accion;
+            return raiz.izquierda.decision;
         }
-        return raiz.derecha.accion;
+        return raiz.derecha.decision;
     }
 }

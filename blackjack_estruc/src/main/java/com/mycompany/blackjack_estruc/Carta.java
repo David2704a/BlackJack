@@ -6,25 +6,33 @@ package com.mycompany.blackjack_estruc;
 
 /**
  *
- * @author AGSalud
+ * @author Johan
  */
 public class Carta {
 
-    private String valor;
-    private String palo;
+    String valor;
+    String palo;
+    Carta siguiente;
 
     public Carta(String valor, String palo) {
         this.valor = valor;
         this.palo = palo;
+        this.siguiente = null;
     }
 
     public int obtenerValorNumerico() {
-        if (valor.equals("A")) return 11;
-        if (valor.equals("K") || valor.equals("Q") || valor.equals("J")) return 10;
-        return Integer.parseInt(valor);
+        switch (valor) {
+            case "A":
+                return 11;
+            case "J":
+            case "Q":
+            case "K":
+                return 10;
+            default:
+                return Integer.parseInt(valor);
+        }
     }
 
-    @Override
     public String toString() {
         return valor + " de " + palo;
     }

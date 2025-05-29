@@ -4,26 +4,37 @@
  */
 package com.mycompany.blackjack_estruc;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 /**
  *
  * @author AGSalud
  */
 public class ColaTurnos {
 
-    private Queue<String> turnos = new LinkedList<>();
+    NodoJugador frente, fin;
 
-    public void agregarTurno(String nombre) {
-        turnos.offer(nombre);
+    public void agregar(Jugador jugador) {
+        NodoJugador nuevo = new NodoJugador(jugador);
+        if (fin != null) {
+            fin.siguiente = nuevo;
+        } else {
+            frente = nuevo;
+        }
+        fin = nuevo;
     }
 
-    public String siguienteTurno() {
-        return turnos.poll();
+    public Jugador remover() {
+        if (frente == null) {
+            return null;
+        }
+        Jugador j = frente.jugador;
+        frente = frente.siguiente;
+        if (frente == null) {
+            fin = null;
+        }
+        return j;
     }
 
-    public boolean hayTurnos() {
-        return !turnos.isEmpty();
+    public boolean estaVacia() {
+        return frente == null;
     }
 }

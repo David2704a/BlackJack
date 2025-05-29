@@ -4,54 +4,51 @@
  */
 package com.mycompany.blackjack_estruc;
 
-import java.util.ArrayList;
-
 /**
  *
- * @author AGSalud
+ * @author Johan
  */
 public class Jugador {
 
-    private String nombre;
-    private ArrayList<Carta> mano = new ArrayList<>();
+    String nombre;
+    Carta mano;
 
     public Jugador(String nombre) {
         this.nombre = nombre;
+        this.mano = null;
     }
 
-    public void recibirCarta(Carta carta) {
-        mano.add(carta);
-    }
-
-    public int calcularPuntaje() {
-        int total = 0;
-        int ases = 0;
-        for (Carta c : mano) {
-            int valor = c.obtenerValorNumerico();
-            if (valor == 11) {
-                ases++;
-            }
-            total += valor;
-        }
-        while (total > 21 && ases > 0) {
-            total -= 10;
-            ases--;
-        }
-        return total;
+    public void recibirCarta(Carta nueva) {
+        nueva.siguiente = mano;
+        mano = nueva;
     }
 
     public void mostrarMano() {
-        for (Carta c : mano) {
-            System.out.println("  " + c);
+        System.out.println(nombre + " tiene:");
+        Carta actual = mano;
+        while (actual != null) {
+            System.out.println("  " + actual);
+            actual = actual.siguiente;
         }
-        System.out.println("Puntaje: " + calcularPuntaje());
+        System.out.println("Puntaje: " + obtenerPuntaje());
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public ArrayList<Carta> getMano() {
-        return mano;
+    public int obtenerPuntaje() {
+        int suma = 0;
+        int ases = 0;
+        Carta actual = mano;
+        while (actual != null) {
+            int val = actual.obtenerValorNumerico();
+            suma += val;
+            if (actual.valor.equals("A")) {
+                ases++;
+            }
+            actual = actual.siguiente;
+        }
+        while (suma > 21 && ases > 0) {
+            suma -= 10;
+            ases--;
+        }
+        return suma;
     }
 }

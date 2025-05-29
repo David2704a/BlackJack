@@ -8,13 +8,13 @@ package com.mycompany.blackjack_estruc;
  *
  * @author AGSalud
  */
-public class NodoCarta {
+public class NodoJugador {
 
-    Carta carta;
-    NodoCarta siguiente;
+    Jugador jugador;
+    NodoJugador siguiente;
 
-    public NodoCarta(Carta carta) {
-        this.carta = carta;
+    public NodoJugador(Jugador jugador) {
+        this.jugador = jugador;
         this.siguiente = null;
     }
 }

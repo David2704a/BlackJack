@@ -1,10 +1,10 @@
-C:\Users\AGSalud\Desktop\BlackJack\blackjack_estruc\src\main\java\com\mycompany\blackjack_estruc\ArbolDecisionDealer.java
+C:\Users\AGSalud\Desktop\BlackJack\blackjack_estruc\src\main\java\com\mycompany\blackjack_estruc\ArbolDecision.java
 C:\Users\AGSalud\Desktop\BlackJack\blackjack_estruc\src\main\java\com\mycompany\blackjack_estruc\Baraja.java
 C:\Users\AGSalud\Desktop\BlackJack\blackjack_estruc\src\main\java\com\mycompany\blackjack_estruc\Blackjack_estruc.java
 C:\Users\AGSalud\Desktop\BlackJack\blackjack_estruc\src\main\java\com\mycompany\blackjack_estruc\Carta.java
 C:\Users\AGSalud\Desktop\BlackJack\blackjack_estruc\src\main\java\com\mycompany\blackjack_estruc\ColaTurnos.java
-C:\Users\AGSalud\Desktop\BlackJack\blackjack_estruc\src\main\java\com\mycompany\blackjack_estruc\HistorialCartas.java
-C:\Users\AGSalud\Desktop\BlackJack\blackjack_estruc\src\main\java\com\mycompany\blackjack_estruc\JuegoBlackJack.java
 C:\Users\AGSalud\Desktop\BlackJack\blackjack_estruc\src\main\java\com\mycompany\blackjack_estruc\Jugador.java
-C:\Users\AGSalud\Desktop\BlackJack\blackjack_estruc\src\main\java\com\mycompany\blackjack_estruc\NodoCarta.java
 C:\Users\AGSalud\Desktop\BlackJack\blackjack_estruc\src\main\java\com\mycompany\blackjack_estruc\NodoDecision.java
+C:\Users\AGSalud\Desktop\BlackJack\blackjack_estruc\src\main\java\com\mycompany\blackjack_estruc\NodoJugador.java
+C:\Users\AGSalud\Desktop\BlackJack\blackjack_estruc\src\main\java\com\mycompany\blackjack_estruc\PilaCartas.java
+C:\Users\AGSalud\Desktop\BlackJack\blackjack_estruc\src\main\java\com\mycompany\blackjack_estruc\TablaHasJugadores.java
